@@ -13,6 +13,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
+    "graphql": "^14.5.8",
     "isomorphic-fetch": "^2.2.1",
     "next": "^9.1.1",
     "react": "~16.9.0",
