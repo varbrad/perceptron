@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "name": "perceptron",
+  "alias": "perceptron.varbrad.dev",
+  "builds": [{ "src": "package.json", "use": "@now/next" }],
+  "routes": [
+    {
+      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
+      "headers": { "cache-control": "immutable" }
+    }
+  ],
+  "github": {
+    "silent": true
+  }
+}
