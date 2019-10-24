@@ -1,13 +1,11 @@
 const [IGNORE, WARN, ERROR] = [0, 1, 2]
 
-module.exports = {
+const BASE_CONFIG = {
   parser: '@typescript-eslint/parser',
   extends: [
-    'plugin:@typescript-eslint/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
-    'prettier/@typescript-eslint',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
   ],
@@ -36,5 +34,26 @@ module.exports = {
     react: {
       version: 'detect',
     },
-  },
+  }
+}
+
+const TS_CONFIG = {
+  ...BASE_CONFIG,
+  files: ['*.{ts,tsx}'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
+    'prettier/@typescript-eslint',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+  ]
+}
+
+module.exports = {
+  ...BASE_CONFIG,
+  overrides: [
+    TS_CONFIG
+  ]
 }
